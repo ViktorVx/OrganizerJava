@@ -11,7 +11,7 @@ public class PersonController {
 
     private static final Logger logger = LoggerFactory.getLogger(OrganizerApp.class);
 
-    @RequestMapping("/")
+    @RequestMapping("/new")
     String home() {
         logger.warn("Обновлена главная страница");
         return "Hello world!!!";
