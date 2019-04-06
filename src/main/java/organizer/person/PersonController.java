@@ -13,7 +13,7 @@ public class PersonController {
 
     @RequestMapping("/")
     String home() {
-        logger.info("Обновлена главная страница");
+        logger.warn("Обновлена главная страница");
         return "Hello world!!!";
     }
 }
