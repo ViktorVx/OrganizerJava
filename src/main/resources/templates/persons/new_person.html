@@ -5,7 +5,7 @@
     <title>Добавление персону</title>
 </head>
 <body>
-    <h1 th:text="#{app.person.addition}"></h1>
+    <h1 th:class="main-header" th:text="#{app.person.addition}"></h1>
     <br>
 
     <form action="#" th:action="@{/persons/new_person}" th:object="${person}" method="post">
