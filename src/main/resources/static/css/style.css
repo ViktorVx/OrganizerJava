@@ -1,3 +1,13 @@
 .main-header{
     color: red;
 }
+
+.create-person-form {
+    margin: 10px auto;
+    width: 400px;
+}
+
+.create-person-bgrp{
+    margin: 0 auto;
+    width: 40%;
+}

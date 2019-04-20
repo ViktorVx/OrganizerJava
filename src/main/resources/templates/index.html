@@ -38,40 +38,49 @@
     </div>
 </nav>
 
-<!--<br>-->
-<!--<br>-->
-<!--<br>-->
-<!--<br>-->
-<!--<h1 th:class="main-header" th:text="#{app.welcome}"></h1>-->
-<!--<h1 th:class="main-header" th:text="#{app.main.page}"></h1>-->
-<!--<br>-->
 <a th:text="#{app.person.addition}" th:href="@{persons/new_person}"></a>
-<!--<br>-->
-<!--<br>-->
-<!--<br>-->
-<!--<br>-->
+<br>
 
-<!--<div>-->
-    <!--<form>-->
-        <!--<div class="form-group">-->
-            <!--<label for="exampleInputEmail1">Email address</label>-->
-            <!--<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"-->
-                   <!--placeholder="Enter email">-->
-            <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
-        <!--</div>-->
-        <!--<div class="form-group">-->
-            <!--<label for="exampleInputPassword1">Password</label>-->
-            <!--<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">-->
-        <!--</div>-->
-        <!--<div class="form-group form-check">-->
-            <!--<input type="checkbox" class="form-check-input" id="exampleCheck1">-->
-            <!--<label class="form-check-label" for="exampleCheck1">Check me out</label>-->
-        <!--</div>-->
-        <!--<button type="submit" class="btn btn-primary">Submit</button>-->
-    <!--</form>-->
-<!--</div>-->
+<table class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col" th:text="#{app.person.lastName}"></th>
+        <th scope="col" th:text="#{app.person.firstName}"></th>
+        <th scope="col" th:text="#{app.person.middleName}"></th>
+        <th scope="col" th:text="#{app.person.birthdate}"></th>
+        <th scope="col" th:text="#{app.person.email}"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="person : ${persons}">
+        <th scope="row">1</th>
+        <td th:text="${person.lastName}"></td>
+        <td th:text="${person.firstName}"></td>
+        <td th:text="${person.middleName}"></td>
+        <td th:text="${person.birthDate}"></td>
+        <td th:text="${person.email}"></td>
+    </tr>
+    <!--<tr>-->
+        <!--<th scope="row">2</th>-->
+        <!--<td>Jacob</td>-->
+        <!--<td>Thornton</td>-->
+        <!--<td>@fat</td>-->
+        <!--<td>@fat</td>-->
+        <!--<td>@fat</td>-->
+    <!--</tr>-->
+    <!--<tr>-->
+        <!--<th scope="row">3</th>-->
+        <!--<td>Larry</td>-->
+        <!--<td>the Bird</td>-->
+        <!--<td>@twitter</td>-->
+        <!--<td>@twitter</td>-->
+        <!--<td>@twitter</td>-->
+    <!--</tr>-->
+    </tbody>
+</table>
 
-<!--<script th:async type="text/javascript" th:src="@{/js/script.js}"></script>-->
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

@@ -1,6 +1,8 @@
 package organizer.person;
 
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
@@ -29,6 +31,7 @@ public class Person {
     @Temporal(TemporalType.DATE)
     @Past
     @Column
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date birthDate;
 
     @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\."

@@ -3,16 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <title>Добавление персону</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
 </head>
 <body>
-    <h1 th:class="main-header" th:text="#{app.person.addition}"></h1>
-    <br>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#" th:text="#{app.main.page}"><span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown link
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-    <form action="#" th:action="@{/persons/new_person}" th:object="${person}" method="post">
-        <p>Surname: <input type="text" th:field="*{lastName}" /></p>
-        <p>Name: <input type="text" th:field="*{firstName}" /></p>
-        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
-    </form>
+    <div th:class="create-person-form">
+        <form action="#" th:action="@{/persons/new_person}" th:object="${person}" method="post">
+            <div class="form-group">
+                <label for="lastNameInput" th:text="#{app.person.lastName}"></label>
+                <input type="text" class="form-control" id="lastNameInput" th:aria-describedby="#{app.person.help.lastName}" th:placeholder="#{app.person.lastName}" th:field="*{lastName}">
+            </div>
+            <div class="form-group">
+                <label for="firstNameInput" th:text="#{app.person.firstName}"></label>
+                <input type="text" class="form-control" id="firstNameInput" th:aria-describedby="#{app.person.help.name}" th:placeholder="#{app.person.firstName}" th:field="*{firstName}">
+            </div>
+            <div class="form-group">
+                <label for="middleNameInput" th:text="#{app.person.middleName}"></label>
+                <input type="text" class="form-control" id="middleNameInput" th:aria-describedby="#{app.person.help.middleName}" th:placeholder="#{app.person.middleName}" th:field="*{middleName}">
+            </div>
+            <div class="form-group">
+                <label for="emailInput" th:text="#{app.person.email}"></label>
+                <input type="email" class="form-control" id="emailInput" th:aria-describedby="#{app.person.help.email}" th:placeholder="#{app.person.email}" th:field="*{email}">
+                <small id="emailHelp" class="form-text text-muted" th:text="#{app.person.help.email}"></small>
+            </div>
 
+            <div class="form-group">
+                <label for="birthDateInput" th:text="#{app.person.birthdate}"></label>
+                <input th:type="date" class="form-control" id="birthDateInput" th:aria-describedby="#{app.person.help.birthDate}" th:placeholder="#{app.person.birthdate}" th:field="*{birthDate}">
+                <small id="birthDateHelp" class="form-text text-muted" th:text="#{app.person.help.birthDate}"></small>
+            </div>
+
+            <div th:class="create-person-bgrp">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="reset" class="btn btn-primary">Reset</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
 </body>
 </html>

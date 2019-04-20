@@ -8,4 +8,5 @@ import java.util.UUID;
 public interface PersonRepository extends Repository<Person, UUID> {
 
     void save(Person person);
+    Iterable<Person> findAll();
 }
